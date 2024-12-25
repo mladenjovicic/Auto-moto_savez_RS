@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Auto-moto savez RS</string>
+    <string name="no_interent_title">Nema interneta</string>
+    <string name="no_interent_message">Molimo provjerite svoju internetsku vezu i pokušajte ponovo.</string>
+    <string name="no_internet_again">Pokušaj ponovo</string>
+    <string name="no_interenet_cancel">Odustani</string>
+    <string name="menu_get_location">Provjeri lokaciju</string>
+</resources>
