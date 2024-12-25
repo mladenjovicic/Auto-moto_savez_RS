@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
                     networkListener
                 )
             } else {
-                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "GPS ili mrežna usluga nisu dostupni", Toast.LENGTH_SHORT).show()
             }
         } else {
             Toast.makeText(this, "Permisija za lokacija nisu odobrene", Toast.LENGTH_SHORT).show()

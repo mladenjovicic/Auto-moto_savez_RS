@@ -1,6 +1,5 @@
 package rs.mladenjovicic.amsrs.ui.main.pdfReader
 
-import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.pdf.PdfRenderer
 import androidx.fragment.app.viewModels
@@ -21,7 +20,7 @@ import okhttp3.OkHttpClient
 import rs.mladenjovicic.amsrs.R
 import java.io.File
 import okhttp3.Request
-import rs.mladenjovicic.amsrs.AMSRS
+import java.util.concurrent.TimeUnit
 
 
 class PdfReaderFragment : Fragment() {
@@ -68,7 +67,11 @@ class PdfReaderFragment : Fragment() {
     }
 
     private fun downloadPdf(url: String): File {
-        val client = OkHttpClient()
+        val client = OkHttpClient.Builder()
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .build()
         val request = Request.Builder().url(url).build()
         val response = client.newCall(request).execute()
 
